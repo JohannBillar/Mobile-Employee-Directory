@@ -1,0 +1,12 @@
+#home:after {
+    background-image: url('../js/jquery.mobile-1.4.5/images/icons-png/home-white.png');
+    background-size: 14px 10px;
+}
+#grid:after {
+    background-image: url('../js/jquery.mobile-1.4.5/images/icons-png/grid-white.png');
+    background-size: 14px 10px;
+}
+#phone:after {
+    background-image: url('../js/jquery.mobile-1.4.5/images/icons-png/phone-white.png');
+    background-size: 14px 10px;
+}
