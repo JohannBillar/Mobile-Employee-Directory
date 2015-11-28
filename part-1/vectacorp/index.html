@@ -5,7 +5,9 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Vecta Corp. Mobile</title>
-  <link href="js/jquery.mobile-1.4.5/jquery.mobile-1.4.5.min.css" rel="stylesheet">
+  <link href="js/jquery-mobile-theme/themes/my_theme.min.css" rel="stylesheet">
+  <link href="js/jquery-mobile-theme/themes/jquery.mobile.icons.min.css" rel="stylesheet">
+  <link href="js/jquery.mobile-1.4.5/jquery.mobile.structure-1.4.5.css" rel="stylesheet">
   <link href="styles/main.css" rel="stylesheet">
   <script src="js/jquery-2.1.4.min.js"></script>
   <script src="js/jquery.mobile-1.4.5/jquery.mobile-1.4.5.min.js"></script>
@@ -20,11 +22,7 @@
     });//close ready  
   </script>
 </head>
-<body>
-<!--  home solutions contact -->
-<!-- header and fixed footer -->
-<!-- 3 item navigation widget, unique icon, active on page -->
- 
+<body> 
   <div data-role="page" id="home">
    <header data-role="header">
      <h1>Vecta Corp.</h1>
@@ -61,7 +59,6 @@
      <h4>Copyright &copy;</h4>
    </footer>
   </div>
-  
   <div data-role="page" id="solutions">
     <header data-role="header">
      <h1>Vecta Corp.</h1>
@@ -99,8 +96,7 @@
     <footer data-role="footer" data-position="fixed">
       <h4>Copyright &copy;</h4>
     </footer>
-  </div>
-  
+  </div>  
   <div data-role="page" id="prospect">
     <div data-role="header">
       <h4>vProspect 2.0</h4>
@@ -117,6 +113,7 @@
         <li>Define expansion plans and strategies.</li>
         <li>Implement Search Engine Optimization of all Online materials.</li>
       </ul>
+      <a href="dialog/index.html" data-role="button" data-rel="back" data-theme="b" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" class="ui-btn ui-shadow ui-btn-corner-all ui-btn-up-b"><span class="ui-btn-inner"><span class="ui-btn-text">Go Back</span></span></a>
     </div>
   </div>
   <div data-role="page" id="convert">
@@ -132,6 +129,7 @@
         <li>Develop any applicable back-end programs to facilitate user interaction with the company and offerings on a highly functional level to allow any kind of online transactions and a completely centralized information collection and access point, accessible from any location.</li>
         <li>Create an architecture to display the site content and information in a logical and easy to access manner. Facilitating thereby the desired ease, for the user to find what they are looking for quickly and easily. Allowing the user to focus on the subject at hand rather than searching for information on the site.</li>
       </ul>
+      <a href="dialog/index.html" data-role="button" data-rel="back" data-theme="b" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" class="ui-btn ui-shadow ui-btn-corner-all ui-btn-up-b"><span class="ui-btn-inner"><span class="ui-btn-text">Go Back</span></span></a>      
     </div>
   </div>
   <div data-role="page" id="retain">
@@ -144,11 +142,11 @@
         <li>Collect crucial information, data and statistics that allow a company to keep in touch with users in a very customized, highly targeted way.</li>  
         <li>Analyze site visitor behavior through traffic analysis, usability studies and interactive polling. Recommending and making site and application adjustments to improve usability and user experience.</li>
       </ul>
+      <a href="dialog/index.html" data-role="button" data-rel="back" data-theme="b" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" class="ui-btn ui-shadow ui-btn-corner-all ui-btn-up-b"><span class="ui-btn-inner"><span class="ui-btn-text">Go Back</span></span></a>      
     </div>  
-  </div>
-      
+  </div>      
   <div data-role="page" id="contact">
-   <header data-role="header">
+    <header data-role="header">
      <h1>Vecta Corp.</h1>
      <div data-role="navbar" data-iconpos="top">
       <ul>
@@ -157,14 +155,29 @@
         <li><a href="#contact" id="phone" data-icon="custom" class="ui-state-persist">Contact</a></li>
       </ul>
      </div>
-   </header>
-   <section data-role="content">
-     <p>Section</p>
-   </section>
+    </header>
+    <section data-role="content">
+      <fieldset class="ui-field-contain">
+        <form action="" method="post">
+          <label for="name">Name:</label>
+          <input type="text" name="name" id="name">
+          <label for="email">Email:</label>
+          <input type="text" name="email" id="email">
+          <label for="select">Product Interest</label>
+          <select name="select" id="select">
+            <option value="vprospect">vProspect 2.0</option>
+            <option value="vconvert">vConvert 2.0</option>
+            <option value="vretain">vRetain 1.0</option>
+          </select>
+          <label for="comment">Comment:</label>
+          <textarea name="comment" id="comment"></textarea>
+          <input type="submit" value="submit" data-inline="true" data-theme="b">
+        </form>
+      </fieldset> 
+    </section>
     <footer data-role="footer" data-position="fixed">
       <h4>Copyright &copy;</h4>
-   </footer>
-  </div>
-      
+    </footer>
+  </div>      
 </body>
 </html>
