@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Mobile Employee Directory</title>
+    <link href="js/jquery.mobile-1.4.5/jquery.mobile-1.4.5.min.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+    <script src="js/jquery-2.1.4.min.js"></script>
+    <script src="js/jquery.mobile-1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <script src="js/home.js"></script>
+    <script src="js/employee.js"></script>
+    <script src="js/reports.js"></script>
+    <script>
+      $(function() {
+        $(document).on("click", "a", function(e) {
+          sessionStorage.setItem("id", e.currentTarget.id);
+        });
+      });
+    </script>  
+</head>
+<body>
+ 
+  <!-- page 1 home -->
+  <div data-role="page" id="home">
+    <header data-role="header" data-theme="b">
+      <h1>Directory</h1>
+    </header>
+    <section data-role="content" id=container>
+      <ul data-role="listview" data-filter="true" id="dir"></ul> 
+        <div id="welcome">
+          <h3>Welcome to Directory</h3>
+          <p>This is a sample app that demostrates how to build applications with jQuery Mobile</p>
+        </div>  
+    </section>
+    
+  </div>
+  
+  <!-- page 2 employee -->
+  <div data-role="page" id="employee">
+    <header data-role="header" data-theme="b">
+      <h1>Employee Details</h1>
+      <a href="#home" class="ui-btn-left" data-icon="back">Back</a>
+      <a href="#home" class="ui-btn-right" data-icon="search">Search</a>
+    </header>
+    <section data-role="content" id="page2container">
+      <div id="head-shot"></div>
+    </section>
+    
+  </div> 
+  
+<!--   page 3 reports -->
+  <div data-role="page" id="reports">
+    <header data-role="header" data-theme="b">
+      <h1>Direct Reports</h1>
+      <a href="#home" class="ui-btn-left" data-icon="back">Back</a>
+      <a href="#home" class="ui-btn-right" data-icon="search">Search</a>
+    </header>
+    <section data-role="content" id="direct"></section>
+  </div>
+
+</body>
+</html>

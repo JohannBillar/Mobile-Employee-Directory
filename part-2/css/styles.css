@@ -1,0 +1,23 @@
+/* home
+-----------------------------------------------*/
+
+#welcome {
+  padding-top: 20px;
+}
+
+/* hides welcome message*/
+.hide {
+  display: none;
+}
+
+/* emplyee details
+-----------------------------------------------*/
+
+/* headshot */
+#head-shot img {
+  float: left;
+  margin-right: 10px;
+}
+.clr {
+  clear: both;
+}

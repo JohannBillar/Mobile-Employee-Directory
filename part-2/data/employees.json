@@ -1,0 +1,122 @@
+{ "employees": [
+  {
+    "ID":1,
+    "Name":"Amy Jones",
+    "Title":"Sales Representative",
+    "ImagePath":"directory/images/amy_jones.jpg",
+    "OfficeNumber":"619-100-1234",
+    "CellNumber":"222-111-1234",
+    "Email":"amy@email.com",
+    "ReportsTo":6
+  },
+  {
+    "ID":2,
+    "Name":"Eugene Lee",
+    "Title":"Controller",
+    "ImagePath":"directory/images/eugene_lee.jpg",
+    "OfficeNumber":"619-200-2134",
+    "CellNumber":"222-222-1234",
+    "Email":"eugen@email.com",
+    "ReportsTo":4
+  },
+  {
+    "ID":3,
+    "Name":"Gary Donovan",
+    "Title":"Sales Representative",
+    "ImagePath":"directory/images/gary_donovan.jpg",
+    "OfficeNumber":"619-300-3134",
+    "CellNumber":"222-333-1234",
+    "Email":"gary@email.com",
+    "ReportsTo":6
+  },
+  {
+    "ID":4,
+    "Name":"James King",
+    "Title":"President and CEO",
+    "ImagePath":"directory/images/james_king.jpg",
+    "OfficeNumber":"619-400-4135",
+    "CellNumber":"222-444-1234",
+    "Email":"james@email.com",
+    "ReportsTo":0
+  },
+  {
+    "ID":5,
+    "Name":"John Williams",
+    "Title":"VP of Engineering",
+    "ImagePath":"directory/images/john_williams.jpg",
+    "OfficeNumber":"619-500-5156",
+    "CellNumber":"222-555-1234",
+    "Email":"john@email.com",
+    "ReportsTo":4
+  },
+  {
+    "ID":6,
+    "Name":"Julie Taylor",
+    "Title":"VP of Marketing",
+    "ImagePath":"directory/images/julie_taylor.jpg",
+    "OfficeNumber":"619-600-6166",
+    "CellNumber":"222-111-1234",
+    "Email":"july@email.com",
+    "ReportsTo":4
+  },
+  {
+    "ID":7,
+    "Name":"Kathleen Byrne",
+    "Title":"Sales Representative",
+    "ImagePath":"directory/images/kathleen_byrne.jpg",
+    "OfficeNumber":"619-700-7178",
+    "CellNumber":"222-777-1234",
+    "Email":"kathleen@email.com",
+    "ReportsTo":6
+  },
+    {
+    "ID":8,
+    "Name":"Lisa Wong",
+    "Title":"Software Architect",
+    "ImagePath":"directory/images/lisa_wong.jpg",
+    "OfficeNumber":"619-800-8188",
+    "CellNumber":"222-888-1234",
+    "Email":"lisa@email.com",
+    "ReportsTo":5
+  },
+  {
+    "ID":9,
+    "Name":"Paul Jones",
+    "Title":"QA Manager",
+    "ImagePath":"directory/images/paul_jones.jpg",
+    "OfficeNumber":"619-900-9190",
+    "CellNumber":"222-999-1234",
+    "Email":"paul@email.com",
+    "ReportsTo":4
+  },
+  {
+    "ID":10,
+    "Name":"Paula Gates",
+    "Title":"Software Architect",
+    "ImagePath":"directory/images/paula_gates.jpg",
+    "OfficeNumber":"619-101-1010",
+    "CellNumber":"222-101-1234",
+    "Email":"paula@email.com",
+    "ReportsTo":5
+  },
+  {
+    "ID":11,
+    "Name":"Ray Moore",
+    "Title":"Software Architect",
+    "ImagePath":"directory/images/ray_moore.jpg",
+    "OfficeNumber":"619-110-1111",
+    "CellNumber":"222-110-1234",
+    "Email":"ray@email.com",
+    "ReportsTo":5
+  },
+  {
+    "ID":12,
+    "Name":"Steven Wells",
+    "Title":"Software Architect",
+    "ImagePath":"directory/images/steven_wells.jpg",
+    "OfficeNumber":"619-102-1212",
+    "CellNumber":"222-102-1234",
+    "Email":"steven@email.com",
+    "ReportsTo":5
+  }  
+]}
