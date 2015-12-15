@@ -12,13 +12,6 @@
     <script src="js/home.js"></script>
     <script src="js/employee.js"></script>
     <script src="js/reports.js"></script>
-    <script>
-      $(function() {
-        $(document).on("click", "a", function(e) {
-          sessionStorage.setItem("id", e.currentTarget.id);
-        });
-      });
-    </script>  
 </head>
 <body>
  
@@ -57,8 +50,10 @@
       <a href="#home" class="ui-btn-left" data-icon="back">Back</a>
       <a href="#home" class="ui-btn-right" data-icon="search">Search</a>
     </header>
-    <section data-role="content" id="direct"></section>
+    <section data-role="content" id="page3container">
+      <ul data-role="listview" id="direct-dir" class="ui-listview"></ul>
+    </section>
   </div>
-
+  
 </body>
 </html>

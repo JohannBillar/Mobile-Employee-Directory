@@ -1,6 +1,9 @@
 $(function(){
-  $('input').attr("placeholder", "Search");
+  $('#home section').on("click", "a", function(e) {
+    sessionStorage.setItem("id-employee-home", e.currentTarget.id);
+  });
   
+  $('input').attr("placeholder", "Search");
   $('input').one("input", function(val){
     $('#welcome').addClass("hide");
     
@@ -44,7 +47,6 @@ $(function(){
           ]
         });
       },
-      
       dataType: 'json',
       success: function(response){
         var retrievedSubordinates = JSON.parse(localStorage.getItem("subordinates"));        
@@ -52,7 +54,7 @@ $(function(){
           $.each(this, function(key, value){
             $('#dir').append(
               '<li>' +
-                '<a href="#employee" class="employee-link" id="' + value.ID + '">' +
+                '<a href="#employee" id="' + value.ID + '">' +
                   '<img src="' + value.ImagePath + '">' +
                   '<h3>' + value.Name + '</h3>' +
                   '<p>' + value.Title + '</p>' +

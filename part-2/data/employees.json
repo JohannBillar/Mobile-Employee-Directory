@@ -92,7 +92,7 @@
   {
     "ID":10,
     "Name":"Paula Gates",
-    "Title":"Software Architect",
+    "Title":"Sr. Software Architect",
     "ImagePath":"directory/images/paula_gates.jpg",
     "OfficeNumber":"619-101-1010",
     "CellNumber":"222-101-1234",
@@ -102,12 +102,12 @@
   {
     "ID":11,
     "Name":"Ray Moore",
-    "Title":"Software Architect",
+    "Title":"Jr. Software Architect",
     "ImagePath":"directory/images/ray_moore.jpg",
     "OfficeNumber":"619-110-1111",
     "CellNumber":"222-110-1234",
     "Email":"ray@email.com",
-    "ReportsTo":5
+    "ReportsTo":10
   },
   {
     "ID":12,

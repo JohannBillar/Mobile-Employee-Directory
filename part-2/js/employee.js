@@ -1,6 +1,6 @@
-$(function(){  
-  $(window).hashchange(function(e) {          
-    var idNumber = sessionStorage.getItem("id");
+$(function(){    
+  $(window).hashchange(function(e) { 
+    var idNumber = sessionStorage.getItem("id-employee-home");
     
     $.ajax({
       type: 'GET',
@@ -23,21 +23,24 @@ $(function(){
       },
       dataType: 'json',
       success: function(response){
-        
-        var manager;
+        var managerName;
         var reportsToNum;
-        
-        reportsToNum = response.employees[idNumber-1].ReportsTo-1;
-        
+        var reportsToID;
+        if(response.employees[idNumber-1] !== undefined){
+          reportsToID = response.employees[idNumber-1].ReportsTo;
+        }   
+        if(response.employees[idNumber-1] !== undefined){
+          reportsToNum = response.employees[idNumber-1].ReportsTo-1;
+        }        
         if(response.employees[reportsToNum] === undefined){
-          manager = "I'm the Boss!";
-        } else manager = response.employees[reportsToNum].Name;
- 
+          managerName = "I'm the Boss!";
+        } else managerName = response.employees[reportsToNum].Name;
+        
         var retrievedSubordinates = JSON.parse(localStorage.getItem("subordinates"));
+        
         $.each(response, function(){
-          
           $.each(this, function(key, value){
-            if(value.ID == idNumber){
+            if(idNumber === value.ID.toString()){
               $('#head-shot').html(
                 '<img src="' + value.ImagePath + '">' +
                 '<h3>' + value.Name + '</h3>' +
@@ -47,13 +50,13 @@ $(function(){
               $('#break').html('<ul data-role="listview" data-inset="true" id="detail"></ul>');
               $('#detail').html(
                 '<li>' +
-                    '<a href="#" id="' + reportsToNum + '">' +
+                    '<a href="#" id="' + reportsToID + '">' +
                     '<h3> View Manager </h3>' +
-                    '<p>' + manager + '</p>' +
+                    '<p>' + managerName + '</p>' +
                   '</a>' +
                 '</li>' +
                 '<li>' +
-                  '<a href="' + '#reports' + '">' +
+                  '<a href="#reports" id="' + value.ID + '">' +
                     '<h3> View Direct Reports </h3>' +
                      '<p>' + retrievedSubordinates[value.ID-1] + '</p>' +
                   '</a>' +
@@ -79,8 +82,8 @@ $(function(){
       });//close ajax call 
   }); //end haschange
   
-  $('body').on("click", "a", ".view-manager", function(e){
-    var idNumber = sessionStorage.getItem("id");
+  $('#employee section').on("click", "a", function(e){
+    sessionStorage.setItem("id-employee-page", e.currentTarget.id);
 
     $.ajax({
       type: 'GET',
@@ -103,27 +106,25 @@ $(function(){
       },
       dataType: 'json',
       success: function(response){
-        var manager;
-        var reportsToNumMgr;
-        var mgrNum;
-        var mgrReportsTo;
-        
-        // Used to load manager details on screen
-        reportsToNumMgr = response.employees[idNumber-1].ReportsTo;
-        
-        
-        // Used to load managers manager name and number
-        mgrNum = response.employees[reportsToNumMgr-1].ReportsTo-1;
-        
-        if(response.employees[mgrNum] === undefined){
-          mgrReportsTo = "I'm the Boss!";
-        } else mgrReportsTo = response.employees[mgrNum].Name;
+        var reportsToID = sessionStorage.getItem("id-employee-page");
+        var reportsToMgrName;
+        var reportsToMgrNum;
+        var reportsToMgrID; 
+        if(response.employees[reportsToID-1] !== undefined){
+          reportsToMgrID = response.employees[reportsToID-1].ReportsTo;
+        }
+        if(response.employees[reportsToID-1] !== undefined){
+          reportsToMgrNum = response.employees[reportsToID-1].ReportsTo-1;
+        }        
+        if(response.employees[reportsToMgrNum] === undefined){
+          reportsToMgrName = "I'm the Boss!";
+        } else reportsToMgrName = response.employees[reportsToMgrNum].Name;
         
         var retrievedSubordinates = JSON.parse(localStorage.getItem("subordinates"));
         $.each(response, function(){
           
           $.each(this, function(key, value){
-            if(value.ID == reportsToNumMgr){
+            if(value.ID == reportsToID){
               $('#head-shot').html(
                 '<img src="' + value.ImagePath + '">' +
                 '<h3>' + value.Name + '</h3>' +
@@ -133,13 +134,13 @@ $(function(){
               $('#break').html('<ul data-role="listview" data-inset="true" id="detail"></ul>');
               $('#detail').html(
                 '<li>' +
-                    '<a href="#" class="view-manager" id="' + mgrNum + '">' +
+                    '<a href="#" id="' + reportsToMgrID + '">' +
                     '<h3> View Manager </h3>' +
-                    '<p>' + mgrReportsTo + '</p>' +
+                    '<p>' + reportsToMgrName + '</p>' +
                   '</a>' +
                 '</li>' +
                 '<li>' +
-                  '<a href="' + '#reports' + '">' +
+                  '<a href="#reports" id="' + value.ID + '">' +
                     '<h3> View Direct Reports </h3>' +
                      '<p>' + retrievedSubordinates[value.ID-1] + '</p>' +
                   '</a>' +
