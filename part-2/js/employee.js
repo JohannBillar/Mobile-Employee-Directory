@@ -1,7 +1,6 @@
 $(function(){    
   $(window).hashchange(function(e) { 
     var idNumber = sessionStorage.getItem("id-employee-home");
-    
     $.ajax({
       type: 'GET',
       url: 'data/employees.json',
@@ -23,6 +22,7 @@ $(function(){
       },
       dataType: 'json',
       success: function(response){
+        
         var managerName;
         var reportsToNum;
         var reportsToID;
@@ -35,7 +35,6 @@ $(function(){
         if(response.employees[reportsToNum] === undefined){
           managerName = "I'm the Boss!";
         } else managerName = response.employees[reportsToNum].Name;
-        
         var retrievedSubordinates = JSON.parse(localStorage.getItem("subordinates"));
         
         $.each(response, function(){
@@ -72,6 +71,12 @@ $(function(){
                     '<h3> Call Cell </h3>' +
                     '<p>' + value.CellNumber + '</p>' +
                   '</a>' +
+                '</li>' +
+                '<li>' +
+                  '<a href="mailto:' + value.Email + '" data-role="button">' +
+                    '<h3> Email Me </h3>' +
+                    '<p>' + value.Email + '</p>' +
+                  '</a>' +
                 '</li>' 
               );
               $('#detail').listview();
@@ -84,7 +89,6 @@ $(function(){
   
   $('#employee section').on("click", "a", function(e){
     sessionStorage.setItem("id-employee-page", e.currentTarget.id);
-
     $.ajax({
       type: 'GET',
       url: 'data/employees.json',
@@ -119,10 +123,9 @@ $(function(){
         if(response.employees[reportsToMgrNum] === undefined){
           reportsToMgrName = "I'm the Boss!";
         } else reportsToMgrName = response.employees[reportsToMgrNum].Name;
-        
         var retrievedSubordinates = JSON.parse(localStorage.getItem("subordinates"));
+        
         $.each(response, function(){
-          
           $.each(this, function(key, value){
             if(value.ID == reportsToID){
               $('#head-shot').html(
@@ -155,6 +158,12 @@ $(function(){
                   '<a href="tel:' + value.OfficeNumber + '">' +
                     '<h3> Call Cell </h3>' +
                     '<p>' + value.CellNumber + '</p>' +
+                  '</a>' +
+                '</li>' +
+                '<li>' +
+                  '<a href="mailto:' + value.Email + '" data-role="button">' +
+                    '<h3> Email Me </h3>' +
+                    '<p>' + value.Email + '</p>' +
                   '</a>' +
                 '</li>' 
               );

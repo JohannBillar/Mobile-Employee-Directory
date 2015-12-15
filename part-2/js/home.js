@@ -1,9 +1,10 @@
 $(function(){
-  $('#home section').on("click", "a", function(e) {
+  $('body').on("click", "a", function(e) {
     sessionStorage.setItem("id-employee-home", e.currentTarget.id);
   });
   
   $('input').attr("placeholder", "Search");
+  $('input').focus();
   $('input').one("input", function(val){
     $('#welcome').addClass("hide");
     
@@ -62,7 +63,7 @@ $(function(){
                 '</a>' +
               '</li>'
             );
-            $('#dir').listview();
+            $('#dir').listview("refresh");
           });
         });  
       }
